@@ -22,8 +22,7 @@ public class FitnessFragment extends Fragment {
     ImageView img;
     ImageView img2;
     ImageView img3;
-    ImageView img4;
-    ImageView img5;
+
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
