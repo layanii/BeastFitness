@@ -21,7 +21,7 @@ public class DietActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         webView = findViewById(R.id.webview1);
-        webView.loadUrl("https://www.muscleandstrength.com/recipes");
+        webView.loadUrl("https://www.kholoudabouzid.com/tag/%D8%B3%D8%B9%D8%B1%D8%A7%D8%AA-%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A%D8%A9/");
 
     }
 }
