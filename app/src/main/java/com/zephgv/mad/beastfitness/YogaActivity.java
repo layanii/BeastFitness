@@ -38,8 +38,6 @@ public class YogaActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
     private void gotoUri(String s) {
         Uri uri = Uri.parse(s);
