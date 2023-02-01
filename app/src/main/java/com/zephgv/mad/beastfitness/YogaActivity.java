@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class YogaActivity extends AppCompatActivity {
 
-    CardView cd1,cd2,cd3,cd4,cd5;
+    CardView cd1,cd2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +21,6 @@ public class YogaActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         cd1 = findViewById(R.id.virkshasana);
         cd2 = findViewById(R.id.cobrasana);
-        cd3 = findViewById(R.id.pranayama);
-        cd4 = findViewById(R.id.yogasana);
-        cd5 = findViewById(R.id.utkatasana);
 
         cd1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,31 +37,6 @@ public class YogaActivity extends AppCompatActivity {
                 gotoUri("https://www.youtube.com/watch?v=fOdrW7nf9gw");
             }
         });
-
-        cd3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(YogaActivity.this, "Opening Youtube!", Toast.LENGTH_SHORT).show();
-                gotoUri("https://www.youtube.com/watch?v=395ZloN4Rr8");
-            }
-        });
-
-        cd4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(YogaActivity.this, "Opening Youtube!", Toast.LENGTH_SHORT).show();
-                gotoUri("https://www.youtube.com/watch?v=1xRX1MuoImw");
-            }
-        });
-
-        cd5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(YogaActivity.this, "Opening Youtube!", Toast.LENGTH_SHORT).show();
-                gotoUri("https://www.youtube.com/watch?v=4xyTmX_OMiM");
-            }
-        });
-
 
 
 
