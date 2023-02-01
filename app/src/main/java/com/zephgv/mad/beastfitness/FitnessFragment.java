@@ -22,8 +22,7 @@ public class FitnessFragment extends Fragment {
     ImageView img;
     ImageView img2;
     ImageView img3;
-    ImageView img4;
-    ImageView img5;
+
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -60,8 +59,6 @@ public class FitnessFragment extends Fragment {
         img = view.findViewById(R.id.bmibtn1);
         img2 = view.findViewById(R.id.dietbtn1);
         img3 = view.findViewById(R.id.musicbtn1);
-        img4 = view.findViewById(R.id.wellbtn1);
-        img5 = view.findViewById(R.id.tipsbtn1);
 
         img.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,22 +81,6 @@ public class FitnessFragment extends Fragment {
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "Redirecting to Spotify!", Toast.LENGTH_SHORT).show();
                 gotoUri("https://open.spotify.com/playlist/1Pw57C5UiYrDSxa21UBWWY");
-            }
-        });
-
-        img4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),WellnessActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        img5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),TipsActivity.class);
-                startActivity(intent);
             }
         });
 

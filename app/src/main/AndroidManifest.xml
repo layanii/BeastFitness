@@ -21,12 +21,6 @@
             android:name=".WorkoutActivity"
             android:exported="false" />
         <activity
-            android:name=".WellnessActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TipsActivity"
-            android:exported="false" />
-        <activity
             android:name=".DietActivity"
             android:exported="false" />
         <activity
