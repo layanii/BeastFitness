@@ -43,6 +43,7 @@ public class ProfileFragment extends Fragment {
     FirebaseAuth fAuth;
     String userID;
 
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -80,7 +81,7 @@ public class ProfileFragment extends Fragment {
         cm = view.findViewById(R.id.height_label);
         name = view.findViewById(R.id.full_name_profile);
         email = view.findViewById(R.id.Email_profile);
-        contact = view.findViewById(R.id.contact_profile);
+        //contact = view.findViewById(R.id.contact_profile);
         updatebtn = view.findViewById(R.id.updatebutton);
         img = view.findViewById(R.id.profile_image);
 
@@ -99,24 +100,27 @@ public class ProfileFragment extends Fragment {
             public void onClick(View view) {
                 String pname = name.getEditText().getText().toString();
                 String pemail = email.getEditText().getText().toString();
-                String pcontact = contact.getEditText().getText().toString();
+                //String pcontact = contact.getEditText().getText().toString();
                 String pweight = kg.getText().toString();
                 String pheight = cm.getText().toString();
-
+                FirebaseUser user_ = FirebaseAuth.getInstance().getCurrentUser();
                 userID = fAuth.getCurrentUser().getUid();
                 DocumentReference documentReference = firestore.collection("user").document(userID);
                 Map<String,Object> user = new HashMap<>();
                 user.put("name",pname);
                 user.put("email",pemail);
-                user.put("contact",pcontact);
+                //user.put("contact",pcontact);
                 user.put("weight",pweight);
                 user.put("height",pheight);
+                FirebaseUser usere = FirebaseAuth.getInstance().getCurrentUser();
+                usere.updateEmail(pemail);
                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         Log.d(TAG,"Success"+userID);
                     }
                 });
+
             }
         });
 
@@ -132,14 +136,11 @@ public class ProfileFragment extends Fragment {
                         cm.setText(value.getString("height"));
                         name.getEditText().setText(value.getString("name"));
                         email.getEditText().setText(value.getString("email"));
-                        contact.getEditText().setText(value.getString("contact"));
+                     //   contact.getEditText().setText(value.getString("contact"));
                     }
                 });
             }
         });
-
-
-
         return view;
     }
 }

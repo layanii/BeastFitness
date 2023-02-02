@@ -29,7 +29,6 @@ public class LoginActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
 
     ImageView btnGoogle;
-
     FirebaseAuth mAuth;
     FirebaseUser mUser;
 
