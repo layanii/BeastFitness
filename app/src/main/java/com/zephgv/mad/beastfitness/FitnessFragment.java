@@ -80,7 +80,7 @@ public class FitnessFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "Redirecting to Spotify!", Toast.LENGTH_SHORT).show();
-                gotoUri("https://open.spotify.com/playlist/1Pw57C5UiYrDSxa21UBWWY");
+                gotoUri("https://open.spotify.com/genre/0JQ5DAqbMKFAXlCG6QvYQ4");
             }
         });
 

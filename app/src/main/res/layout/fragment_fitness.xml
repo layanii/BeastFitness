@@ -59,23 +59,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageView
         android:id="@+id/musicbtn1"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="84dp"
         android:layout_marginTop="320dp"
         android:background="@drawable/music_icon"
         app:layout_constraintStart_toEndOf="@+id/dietbtn1"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/aclonica"
+        android:text="MUSIC"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/musicbtn1" />
 
     <ImageView
         android:id="@+id/dietbtn1"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="88dp"
         android:layout_marginTop="320dp"
         android:background="@drawable/diet_icon"
         app:layout_constraintStart_toEndOf="@+id/bmibtn1"
@@ -85,11 +97,11 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="124dp"
         android:layout_marginTop="28dp"
         android:fontFamily="@font/aclonica"
-        android:textColor="@color/black"
         android:text="DIET"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/dietbtn1" />
@@ -103,19 +115,6 @@
         android:background="@drawable/bmi_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/aclonica"
-        android:textColor="@color/black"
-        android:text="MUSIC"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/musicbtn1" />
 
     <TextView
         android:id="@+id/textView4"
