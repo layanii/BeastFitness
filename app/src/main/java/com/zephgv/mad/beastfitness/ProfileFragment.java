@@ -1,5 +1,6 @@
 package com.zephgv.mad.beastfitness;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -38,7 +39,7 @@ public class ProfileFragment extends Fragment {
     ImageView img;
     Button btn,updatebtn,btnClear;
     EditText kg,cm;
-    TextInputLayout name,email;
+    TextInputLayout name,Age;
     FirebaseFirestore firestore;
     FirebaseAuth fAuth;
     String userID;
@@ -72,6 +73,7 @@ public class ProfileFragment extends Fragment {
 
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -80,7 +82,7 @@ public class ProfileFragment extends Fragment {
         kg = view.findViewById(R.id.weight_label);
         cm = view.findViewById(R.id.height_label);
         name = view.findViewById(R.id.full_name_profile);
-        email = view.findViewById(R.id.Email_profile);
+        Age = view.findViewById(R.id.UserAge);
         updatebtn = view.findViewById(R.id.updatebutton);
         btnClear = view.findViewById(R.id.btnClear);
         img = view.findViewById(R.id.profile_image);
@@ -99,20 +101,19 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String pname = name.getEditText().getText().toString();
-                String pemail = email.getEditText().getText().toString();
+                String page = Age.getEditText().getText().toString();
                 String pweight = kg.getText().toString();
                 String pheight = cm.getText().toString();
-                FirebaseUser user_ = FirebaseAuth.getInstance().getCurrentUser();
+
 
                 userID = fAuth.getCurrentUser().getUid();
                 DocumentReference documentReference = firestore.collection("user").document(userID);
                 Map<String,Object> user = new HashMap<>();
                 user.put("name",pname);
-                user.put("email",pemail);
+                user.put("email",page);
                 user.put("weight",pweight);
                 user.put("height",pheight);
-                FirebaseUser usere = FirebaseAuth.getInstance().getCurrentUser();
-                usere.updateEmail(pemail);
+
 
                 documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -127,7 +128,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 name.getEditText().setText("");
-                email.getEditText().setText("");
+                Age.getEditText().setText("");
                 kg.setText("");
                 cm.setText("");
             }
@@ -143,7 +144,7 @@ public class ProfileFragment extends Fragment {
                         kg.setText(value.getString("weight"));
                         cm.setText(value.getString("height"));
                         name.getEditText().setText(value.getString("name"));
-                        email.getEditText().setText(value.getString("email"));
+                        Age.getEditText().setText(value.getString("email"));
                     }
                 });
             }
