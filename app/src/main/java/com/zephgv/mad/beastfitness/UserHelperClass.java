@@ -2,25 +2,16 @@ package com.zephgv.mad.beastfitness;
 
 public class UserHelperClass {
 
-    String name,email,contact,weight,height;
+    String email,password;
 
-    public UserHelperClass(String name, String email, String contact, String weight, String height) {
-        this.name = name;
+    public UserHelperClass(String email, String password) {
+
         this.email = email;
-        this.contact = contact;
-        this.weight = weight;
-        this.height = height;
+        this.password = password;
+
     }
 
     public UserHelperClass() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getEmail() {
@@ -30,28 +21,13 @@ public class UserHelperClass {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getContact() {
-        return contact;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getWeight() {
-        return weight;
-    }
 
-    public void setWeight(String weight) {
-        this.weight = weight;
-    }
-
-    public String getHeight() {
-        return height;
-    }
-
-    public void setHeight(String height) {
-        this.height = height;
-    }
 }
