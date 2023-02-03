@@ -36,9 +36,9 @@ public class ProfileFragment extends Fragment {
 
     public static final String TAG = "TAG";
     ImageView img;
-    Button btn,updatebtn;
+    Button btn,updatebtn,btnClear;
     EditText kg,cm;
-    TextInputLayout name,email,contact;
+    TextInputLayout name,email;
     FirebaseFirestore firestore;
     FirebaseAuth fAuth;
     String userID;
@@ -83,6 +83,7 @@ public class ProfileFragment extends Fragment {
         email = view.findViewById(R.id.Email_profile);
         //contact = view.findViewById(R.id.contact_profile);
         updatebtn = view.findViewById(R.id.updatebutton);
+        btnClear = view.findViewById(R.id.btnClear);
         img = view.findViewById(R.id.profile_image);
 
         firestore = FirebaseFirestore.getInstance();
@@ -123,7 +124,15 @@ public class ProfileFragment extends Fragment {
 
             }
         });
-
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                name.getEditText().setText("");
+                email.getEditText().setText("");
+                kg.setText("");
+                cm.setText("");
+            }
+        });
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -141,6 +150,8 @@ public class ProfileFragment extends Fragment {
                 });
             }
         });
+
+
         return view;
     }
 }

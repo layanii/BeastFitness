@@ -195,6 +195,13 @@
         android:id="@+id/updatebutton"
         android:layout_gravity="center_horizontal"
         android:text="UPDATE" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway"
+            android:id="@+id/btnClear"
+            android:layout_gravity="center_horizontal"
+            android:text="RESET" />
 
     </LinearLayout>
 
