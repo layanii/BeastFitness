@@ -58,7 +58,6 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 PerformAuth();
-                Relationdb();
 
             }
         });
@@ -107,10 +106,6 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             });
         }
-    }
-    private void Relationdb(){
-        String email = inputEmail.getText().toString();
-        String password = inputPassword.getText().toString();
     }
 
     private void sendUserToNextActivity() {
